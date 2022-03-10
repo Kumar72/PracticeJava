@@ -17,7 +17,7 @@ public class Boolean_Infiltration {
     }
 }
 
-class MainTest {
+class BooleanInfiltrationTest {
     public static void main(String[] args) {
         boolean knightIsAwake = true;
         boolean archerIsAwake = true;

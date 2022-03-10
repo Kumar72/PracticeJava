@@ -139,6 +139,75 @@ public class Common_Complexity_Scenarios {
 //        Answer: O(n^2)
 
         /** Challenge 3: Compute the Big O complexity with Multiplication*/
+        while (i < n) { //O(log(n))
+            System.out.println("Pie: "+pie);
+            for (int j = 0; j < i; j++) { //2n
+                sum++; // (2n-1)
+            }
+            i*=2; //O(log(n))
+        }
+        System.out.println("Sum: "+sum); //O(1)
+//        Answer: O(n)
 
+        /** Challenge 4: Nested Loop with Multiplication (basic) */
+        n = 10;
+        sum = 0;
+        i = 1;
+
+        while (i<n) { // O(log3(n))
+            System.out.println("Pie: "+pie);
+            for (int j = 0; j < n; j = j+2) { //O(log3(n)) * n/2
+                sum++; // O((log3(n)) * (n/2) * 2)
+            }
+            i *=3; // O(log3(n))
+        }
+        System.out.println("Sum: "+sum);
+
+//        Answer: O(nlog(n))
+
+        /** Challenge 5: Nested Loop with Multiplication (intermediate) */
+        n = 10;
+        sum = 0;
+        i = 1;
+
+        for (int j = 0; j < n; j+=3) { // O(n/3)
+            System.out.println("Pie: "+pie);
+            i=1; // O(n/3)
+            while (i<n) { // O((n/3) * (log3(n)))
+                sum+=1; // O((n/3) * (log3(n)))
+                i *=3;  // O((n/3) * (log3(n)))
+            }
+        }
+        System.out.println("Sum: "+sum); //O(1)
+//        Answer: O(nlog(n))
+
+        /** Challenge 6: Nested Loop with Multiplication (advance) */
+        n = 10;
+        sum = 0;
+
+        for (int j = 0; j < n; j++) { // O(n)
+            int a = 1; // O(n)
+            System.out.println("Pie: "+pie); // O(n)
+            while (a < j) { // O(n + (log2(j))
+                sum+=1;  // O(n + (log2(j))
+                a*=2;    // O(n + (log2(j))
+            }
+        }
+        System.out.println("Sum: "+sum); // O(1)
+//        Answer: O(n(log(n))
+        /** Challenge 7: Nested Loop with Multiplication (pro) */
+        n = 10;
+        sum = 0;
+        i =1;
+
+        for (int j = 0; j < n; j++) { // O(n)
+            System.out.println("Pie: "+pie); // O(n)
+            while (i < j) { // O(n)
+                sum+=1; // O(n)
+                i *=2;  // O(n)
+            }
+        }
+        System.out.println("Sum: "+sum);
+//        Answer: O(n2)
     }
 }
